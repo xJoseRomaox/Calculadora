@@ -1,22 +1,22 @@
-Calculadora
+# Calculadora
 
 Projeto de uma calculadora desenvolvida em Shell Script (Bash) e Python, com menu interativo e operações matemáticas básicas.
 
-Descrição
+## Descrição
 
 A calculadora permite realizar as seguintes operações:
 
-Adição
-Subtração
-Multiplicação
-Divisão
-Encerramento do programa
+- Adição
+- Subtração
+- Multiplicação
+- Divisão
+- Encerramento do programa
 
 O projeto possui duas versões da calculadora:
 
 calculadora.sh — versão desenvolvida em Shell Script.
 Calculadora_Python.ipynb — versão desenvolvida em Python utilizando Jupyter Notebook/Google Colab.
-Tecnologias utilizadas
+## Tecnologias utilizadas
 Bash / Shell Script
 Python
 Jupyter Notebook
@@ -32,7 +32,7 @@ Como executar o Shell Script
 
 Primeiramente, é necessário conceder permissão de execução ao arquivo:
 
-chmod +x calculadora.sh
+'''chmod +x calculadora.sh'''
 
 Depois, execute o programa:
 
