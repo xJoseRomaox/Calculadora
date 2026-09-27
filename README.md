@@ -1,129 +1,185 @@
-# Calculadora
+Calculadora
 
-Projeto de uma calculadora desenvolvida em Shell Script e Python, utilizando um menu interativo para realizar operações matemáticas básicas.
+Projeto de uma calculadora desenvolvida em Shell Script (Bash) e Python, com menu interativo e operações matemáticas básicas.
 
-## Descrição
+Descrição
 
-A calculadora permite realizar quatro operações matemáticas:
+A calculadora permite realizar as seguintes operações:
 
-- Soma
-- Subtração
-- Multiplicação
-- Divisão
+Adição
+Subtração
+Multiplicação
+Divisão
+Encerramento do programa
 
-O programa possui um menu em loop e a opção 5 permite encerrar a execução.
+O projeto possui duas versões da calculadora:
 
-O projeto foi desenvolvido como atividade acadêmica com o objetivo de praticar programação, Shell Script, Python, organização de código e versionamento utilizando GitHub.
-
-## Tecnologias utilizadas
-Shell Script (Bash)
+calculadora.sh — versão desenvolvida em Shell Script.
+Calculadora_Python.ipynb — versão desenvolvida em Python utilizando Jupyter Notebook/Google Colab.
+Tecnologias utilizadas
+Bash / Shell Script
 Python
-Jupyter Notebook / Google Colab
+Jupyter Notebook
+Google Colab
 GitHub
-Arquivos do projeto
-calculadora.sh — calculadora desenvolvida em Shell Script.
-Calculadora_Python.ipynb — calculadora desenvolvida em Python utilizando um notebook Jupyter/Google Colab.
+bc
+Estrutura do projeto
+Calculadora/
+├── calculadora.sh
+├── Calculadora_Python.ipynb
+└── README.md
 Como executar o Shell Script
 
-Primeiro, é necessário conceder permissão de execução ao arquivo:
+Primeiramente, é necessário conceder permissão de execução ao arquivo:
 
 chmod +x calculadora.sh
 
-Depois, execute o programa com:
+Depois, execute o programa:
 
 ./calculadora.sh
 Funcionamento do Shell Script
 
-Ao executar o programa, é apresentado um menu com as opções:
+O programa utiliza uma estrutura de repetição while true para manter o menu em execução até que o usuário escolha a opção 5.
 
-1 - Soma
+O menu apresenta as seguintes opções:
+
+==========================
+       CALCULADORA
+==========================
+1 - Adição
 2 - Subtração
 3 - Multiplicação
 4 - Divisão
 5 - Sair
+==========================
 
-O programa permanece em execução enquanto o usuário não escolher a opção 5.
+Quando o usuário escolhe a opção 5, o programa apresenta a mensagem:
 
-As operações são realizadas de acordo com a opção escolhida.
+Calculadora encerrada.
 
-Na divisão, o script utiliza o comando bc para realizar o cálculo com casas decimais. O uso de scale=2 permite definir duas casas decimais no resultado.
+e utiliza o comando break para sair do loop.
 
-Antes de realizar uma divisão, o programa verifica se o segundo número é zero. Caso seja, uma mensagem de erro é apresentada para evitar uma divisão inválida.
+Operações no Shell Script
+
+As operações são selecionadas utilizando a estrutura case.
+
+Adição
+resultado=$(echo "$num1 + $num2" | bc)
+
+A expressão é enviada para o comando bc, que realiza o cálculo.
+
+Subtração
+resultado=$(echo "$num1 - $num2" | bc)
+Multiplicação
+resultado=$(echo "$num1 * $num2" | bc)
+Divisão
+
+A divisão utiliza:
+
+resultado=$(echo "scale=2; $num1 / $num2" | bc)
+
+O scale=2 determina que o resultado da divisão será apresentado com duas casas decimais.
+
+Antes de realizar a divisão, o programa verifica se o segundo número é zero:
+
+if [ "$num2" == "0" ]; then
+    echo "Erro: não é possível dividir por zero."
+
+Essa verificação evita uma divisão inválida.
+
+Tratamento de opções inválidas
+
+Caso o usuário escolha uma opção diferente das disponíveis, o programa utiliza o caso padrão da estrutura case:
+
+*)
+    echo "Opção inválida!"
+    ;;
+
+Assim, o programa informa ao usuário que a opção escolhida não é válida e retorna ao menu.
 
 Calculadora em Python
 
-A calculadora em Python foi desenvolvida em um notebook Jupyter/Google Colab, disponível no arquivo:
+A versão em Python está disponível no arquivo:
 
 Calculadora_Python.ipynb
 
-O programa utiliza funções para organizar cada operação matemática:
+O notebook foi desenvolvido utilizando funções para separar as operações matemáticas.
 
-def soma(a, b):
-    return a + b
+Função de adição
+def adicao(num1, num2):
+    return num1 + num2
 
-def subtracao(a, b):
-    return a - b
+Recebe dois números e retorna a soma.
 
-def multiplicacao(a, b):
-    return a * b
+Função de subtração
+def subtracao(num1, num2):
+    return num1 - num2
 
-def divisao(a, b):
-    if b == 0:
-        return "Erro: não é possível dividir por zero."
-    return a / b
+Recebe dois números e retorna a diferença.
 
-Cada função recebe dois números e retorna o resultado da operação correspondente.
+Função de multiplicação
+def multiplicacao(num1, num2):
+    return num1 * num2
 
-A função divisao() possui uma verificação para impedir a divisão por zero.
+Recebe dois números e retorna o produto.
 
-Funcionamento da calculadora em Python
+Função de divisão
+def divisao(num1, num2):
+    if num2 == 0:
+        return None
+    return num1 / num2
 
-O programa apresenta um menu com cinco opções:
+A função verifica primeiro se o segundo número é zero. Caso seja, retorna None, evitando que o programa tente realizar uma divisão inválida.
 
-1 - Soma
+Menu da calculadora Python
+
+Assim como a versão em Shell Script, a calculadora Python utiliza um menu em loop.
+
+As opções são:
+
+1 - Adição
 2 - Subtração
 3 - Multiplicação
 4 - Divisão
 5 - Sair
 
-As opções de 1 a 4 executam as operações matemáticas.
+A estrutura while True permite que o usuário realize várias operações.
 
-A opção 5 encerra o programa.
-
-O menu é executado dentro de uma estrutura while, permitindo que o usuário realize várias operações sem precisar reiniciar o programa.
-
-Caso seja escolhida uma opção inválida, o programa informa o erro e apresenta novamente o menu.
+A opção 5 utiliza break para encerrar o programa.
 
 Exemplo de execução
-==============================
-      CALCULADORA PYTHON
-==============================
-
-Escolha uma operação:
-1 - Soma
+==========================
+       CALCULADORA
+==========================
+1 - Adição
 2 - Subtração
 3 - Multiplicação
 4 - Divisão
 5 - Sair
+==========================
 
-Digite a opção: 1
+Escolha uma opção: 1
 Digite o primeiro número: 10
 Digite o segundo número: 5
+Resultado: 15
 
-Resultado: 15.0
-Tratamento de divisão por zero
+Exemplo de divisão:
 
-Tanto no Shell Script quanto no Python existe uma verificação para evitar a divisão por zero.
+Escolha uma opção: 4
+Digite o primeiro número: 10
+Digite o segundo número: 4
+Resultado: 2.50
 
-No Python:
+Exemplo de divisão por zero:
 
-if b == 0:
-    return "Erro: não é possível dividir por zero."
-
-No Shell Script, o valor do segundo número é verificado antes da realização da divisão.
-
-Essa validação evita erros durante a execução do programa.
-
+Escolha uma opção: 4
+Digite o primeiro número: 10
+Digite o segundo número: 0
+Erro: não é possível dividir por zero.
 Objetivo do projeto
 
-O projeto tem como objetivo demonstrar conhecimentos básicos de programação, criação de scripts, utilização de funções, estruturas de repetição e decisão, tratamento de erros e utilização do GitHub para versionamento e documentação do código.
+O objetivo do projeto é praticar conceitos de programação e automação utilizando Shell Script e Python, além de desenvolver conhecimentos relacionados à documentação e ao versionamento de código utilizando GitHub.
+
+Autor
+
+Projeto desenvolvido como atividade acadêmica.
