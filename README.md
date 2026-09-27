@@ -6,10 +6,10 @@ Projeto de uma calculadora desenvolvida em Shell Script e Python, utilizando um 
 
 A calculadora permite realizar quatro operações matemáticas:
 
-Soma
-Subtração
-Multiplicação
-Divisão
+- Soma
+- Subtração
+- Multiplicação
+- Divisão
 
 O programa possui um menu em loop e a opção 5 permite encerrar a execução.
 
@@ -27,8 +27,8 @@ Como executar o Shell Script
 
 Primeiro, é necessário conceder permissão de execução ao arquivo:
 
-chmod +x calculadora.sh
-
+'''chmod +x calculadora.sh
+'''
 Depois, execute o programa com:
 
 ./calculadora.sh
