@@ -32,7 +32,7 @@ Como executar o Shell Script
 
 Primeiramente, é necessário conceder permissão de execução ao arquivo:
 
-'''chmod +x calculadora.sh'''
+chmod +x calculadora.sh
 
 Depois, execute o programa:
 
