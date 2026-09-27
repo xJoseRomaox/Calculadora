@@ -1,8 +1,8 @@
-Calculadora
+# Calculadora
 
 Projeto de uma calculadora desenvolvida em Shell Script e Python, utilizando um menu interativo para realizar operações matemáticas básicas.
 
-Descrição
+## Descrição
 
 A calculadora permite realizar quatro operações matemáticas:
 
@@ -15,7 +15,7 @@ O programa possui um menu em loop e a opção 5 permite encerrar a execução.
 
 O projeto foi desenvolvido como atividade acadêmica com o objetivo de praticar programação, Shell Script, Python, organização de código e versionamento utilizando GitHub.
 
-Tecnologias utilizadas
+## Tecnologias utilizadas
 Shell Script (Bash)
 Python
 Jupyter Notebook / Google Colab
