@@ -59,33 +59,62 @@ Calculadora encerrada.
 
 e utiliza o comando break para sair do loop.
 
-Operações no Shell Script
+## Operações no Shell Script
 
-As operações são selecionadas utilizando a estrutura case.
+As operações são selecionadas utilizando a estrutura `case`.
 
-Adição
+### Adição
+
+```bash
 resultado=$(echo "$num1 + $num2" | bc)
+```
 
-A expressão é enviada para o comando bc, que realiza o cálculo.
+A expressão é enviada para o comando `bc`, que realiza o cálculo.
 
-Subtração
+### Subtração
+
+```bash
 resultado=$(echo "$num1 - $num2" | bc)
-Multiplicação
+```
+
+### Multiplicação
+
+```bash
 resultado=$(echo "$num1 * $num2" | bc)
-Divisão
+```
+
+### Divisão
 
 A divisão utiliza:
 
+```bash
 resultado=$(echo "scale=2; $num1 / $num2" | bc)
+```
 
-O scale=2 determina que o resultado da divisão será apresentado com duas casas decimais.
+O `scale=2` determina que o resultado da divisão será apresentado com duas casas decimais.
 
 Antes de realizar a divisão, o programa verifica se o segundo número é zero:
 
+```bash
 if [ "$num2" == "0" ]; then
     echo "Erro: não é possível dividir por zero."
+```
 
 Essa verificação evita uma divisão inválida.
+
+---
+
+## Tratamento de opções inválidas
+
+Caso o usuário escolha uma opção diferente das disponíveis, o programa utiliza o caso padrão da estrutura `case`:
+
+```bash
+*)
+    echo "Opção inválida!"
+    ;;
+```
+
+Assim, o programa informa ao usuário que a opção escolhida não é válida e retorna ao menu.
 
 Tratamento de opções inválidas
 
