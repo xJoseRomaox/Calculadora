@@ -37,12 +37,13 @@ chmod +x calculadora.sh
 Depois, execute o programa:
 
 ./calculadora.sh
-Funcionamento do Shell Script
+## Funcionamento do Shell Script
 
-O programa utiliza uma estrutura de repetição while true para manter o menu em execução até que o usuário escolha a opção 5.
+O programa utiliza uma estrutura de repetição `while true` para manter o menu em execução até que o usuário escolha a opção `5`.
 
 O menu apresenta as seguintes opções:
 
+```text
 ==========================
        CALCULADORA
 ==========================
@@ -52,12 +53,15 @@ O menu apresenta as seguintes opções:
 4 - Divisão
 5 - Sair
 ==========================
+```
 
-Quando o usuário escolhe a opção 5, o programa apresenta a mensagem:
+Quando o usuário escolhe a opção `5`, o programa apresenta a mensagem:
 
+```text
 Calculadora encerrada.
+```
 
-e utiliza o comando break para sair do loop.
+Em seguida, o comando `break` encerra o loop.
 
 ## Operações no Shell Script
 
@@ -177,6 +181,8 @@ A estrutura while True permite que o usuário realize várias operações.
 A opção 5 utiliza break para encerrar o programa.
 
 Exemplo de execução
+
+```text
 ==========================
        CALCULADORA
 ==========================
@@ -186,6 +192,7 @@ Exemplo de execução
 4 - Divisão
 5 - Sair
 ==========================
+```
 
 Escolha uma opção: 1
 Digite o primeiro número: 10
